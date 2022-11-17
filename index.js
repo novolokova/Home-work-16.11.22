@@ -17,28 +17,13 @@ const getInfo = function (question) {
   return checkInfo(value) ? value : getInfo(question);
 };
 
-// !!!!!!!!!!!!!!!!!!!! ЧОМУ ВИЩЕ ФУНКЦІЯ ПРАЦЮЄ, А НИЖЧА НІ
-
-// const getInfo = function (question) {
-//     let value = prompt(question);
-//     if (checkInfo(value)) {
-//       return value;
-//     }
-//     getInfo(question);
-//   }
-
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 /**
  *
  * @param {string} input
  * @returns {boolean}
  */
 const checkInfo = function (input) {
-  if (input === "" || !isNaN(input) || input === null || input === " ") {
-    return false;
-  }
-  return true;
+  return (input === "" || !isNaN(input) || input === null || input === " ") ? false: true;
 };
 
 /**
@@ -50,12 +35,11 @@ function family() {
   for (let i = 0; i < count; i++) {
     let name = getInfo(nameFamilyMember);
     let member = getInfo(familyMember);
-    // let name = getNameFamilyMember();
-    // let member = getFamilyMember();
     family[name] = member;
   }
   return family;
 }
+
 /**
  *
  * @param {object} info
